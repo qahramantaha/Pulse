@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: pulse-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES-DB: pulse
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  pulse_postgres_data:
