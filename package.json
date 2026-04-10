@@ -1,20 +1,20 @@
 {
-    "name": "pulse",
-    "version": "0.1.0",
-    "private": true,
-    "description": "Pulse is an autonomous reliability platform that monitors microservices, detects failures, applies recovery actions, and tracks incidents through a central control dashboard.",
-    "license": "MIT",
-    "workspaces": [
-        "services/*",
-        "dashboard"
-    ],
-    "scripts": {
-        "dev": "echo \"Dev scripts will be added later\"",
-        "build": "echo \"Build scripts will be added later\"",
-        "test": "echo \"Test scripts will be added later\"",
-        "lint": "echo \"Lint scripts will be added later\""
-    }, 
-    "devDependencies": {
-        "typescript": "^5.8.3"
-    }
+  "name": "pulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pulse is an autonomous reliability platform that monitors microservices, detects failures, applies recovery actions, and tracks incidents through a central control dashboard.",
+  "license": "MIT",
+  "workspaces": [
+    "services/*",
+    "dashboard"
+  ],
+  "scripts": {
+    "dev": "echo \"Dev scripts will be added later\"",
+    "build": "echo \"Build scripts will be added later\"",
+    "test": "echo \"Test scripts will be added later\"",
+    "lint": "echo \"Lint scripts will be added later\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
 }
