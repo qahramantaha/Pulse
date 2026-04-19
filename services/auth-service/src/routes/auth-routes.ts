@@ -1,17 +1,9 @@
 import { Router } from "express";
+import { registerUser, loginUser } from "../controllers/auth-controller";
 
 const router = Router();
 
-router.post("/register", (req, res) => {
-    res.status(200).json({
-        message: "Register route placeholder"
-    });
-});
-
-router.post("/login", (req, res) => {
-    res.status(200).json({
-        message: "Login route placeholder"
-    });
-});
+router.post("/register", registerUser);
+router.post("/login", loginUser);
 
 export default router;
