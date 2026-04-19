@@ -1,29 +1,14 @@
 import { Request, Response } from "express";
+import { validateLoginInput, validateRegisterInput } from "../utils/auth-validation";
 
 export const registerUser = (req: Request, res: Response) => {
   const { name, email, password } = req.body;
 
-  if (!name || !email || !password) {
-    return res.status(400).json({
-      message: "Name, email, and password are required"
-    });
-  }
+  const validationError = validateRegisterInput(name, email, password);
 
-  if (name.trim() === "") {
+  if (validationError) {
     return res.status(400).json({
-      message: "Name cannot be empty"
-    });
-  }
-
-  if (!email.includes("@")) {
-    return res.status(400).json({
-      message: "Invalid email format"
-    });
-  }
-
-  if(password.length < 6) {
-    return res.status(400).json({
-      message: "Password must be at least 6 characters long"
+      message: validationError
     });
   }
 
@@ -39,21 +24,11 @@ export const registerUser = (req: Request, res: Response) => {
 export const loginUser = (req: Request, res: Response) => {
   const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({
-      message: "Email and password are required"
-    });
-  }
+  const validationError = validateLoginInput(email, password);
 
-  if (!email.includes("@")) {
+  if (validationError) {
     return res.status(400).json({
-      message: "Invalid email format"
-    });
-  }
-
-  if (password.length < 6) {
-    return res.status(400).json({
-      message: "Password must be at least 6 characters long"
+      message: validationError
     });
   }
 
