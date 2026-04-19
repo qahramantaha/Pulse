@@ -1,18 +1,21 @@
 export const createRegisterResponse = (name: string, email: string) => {
     return {
-        message: "Register request received",
+        message: "User registered successfully",
         data: {
             name: name.trim(),
-            email
+            email,
+            role: "user"
         }
     };
 }
 
 export const createLoginResponse = (email: string) => {
     return {
-        message: "Login request received",
+        message: "Login successful",
         data: {
-            email
+            id: "1",
+            email,
+            role: "user"
         }
     };
 }
